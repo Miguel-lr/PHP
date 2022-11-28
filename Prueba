@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+/* variable*/
+$nombre = "Michael";
+/* echoooooo echooo*/
+echo "Helloooo my name is $nombre";
+?> 
+
+</body>
+</html>
