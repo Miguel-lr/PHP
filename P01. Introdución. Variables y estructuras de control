@@ -1,0 +1,105 @@
+1. Imprime (con echo o print) un hola mundo dentro de una estructura html.
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+/* variable*/
+$nombre = "hola mundo";
+/* echoooooo echooo*/
+echo $nombre;
+?> 
+
+</body>
+</html>
+
+
+
+2. Declara una variable numero1 con un valor de 5 y otra número2 con un valor de 2. Haz que el valor de esas variables se guarde en una variable llamada resultado.
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+$numero1 = 5;
+$numero2 = 2;
+$resultado = $numero1 + $numero2;
+echo $resultado;
+?>
+
+</body>
+</html>
+
+
+3. Muestra los números del 1 al 10. Hazlo con distintas estructuras repetitivas
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+for($numero= 1; $numero <= 10; $numero++) {
+    echo $numero . ", ";
+}
+?>
+
+</body>
+</html>
+
+---------------------------------------------
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+$numero = 1;
+while($numero <=10){
+echo "$numero, "; $numero++;
+
+}
+?>
+
+</body>
+</html>
+
+4. Muestra la tabla de multiplicar del 9
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+
+echo "Tabla del 9 <br><br>";
+
+for($numero = 1; $numero <= 10; $numero++) {
+    $multiplicacion = 9 * $numero;
+    echo "9 x $numero = $multiplicacion <br>";
+}
+
+?>
+</body>
+</html>
+
+
+5. Crea un programa que defina una variable número, a la que le asignarás un valor. Si el valor es par, escribirá soy un número par. Si es impar, escribirá soy un número impar.
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+$numero = 5;
+
+if($numero % 2 == 0) {
+    echo "par";
+} else {
+    echo "impar";
+}
+?>
+ 
+</body>
+</html>
