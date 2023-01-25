@@ -1,0 +1,114 @@
+CREAR LA CARPETA "uploadled_files" en la misma carpeta que los ficheros.php"
+
+################FORMULARIO.PHP################
+
+<!DOCTYPE HTML>  
+<html>
+<head>
+</head>
+<body>  
+
+<?php
+session_start(); 
+?>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PHP File Upload</title>
+</head>
+<body>
+  <?php
+    if (isset($_SESSION['message']) && $_SESSION['message'])
+    {
+      printf('<b>%s</b>', $_SESSION['message']);
+      unset($_SESSION['message']);
+    }
+  ?>
+  <form method="POST" action="subida.php" enctype="multipart/form-data">
+    <div>
+      <span>Subir archivo:</span>
+      <input type="file" name="uploadedFile" />
+    </div>
+    <input type="submit" name="uploadBtn" value="Subir" />
+  </form>
+</body>
+</html>
+
+
+</body>
+</html>
+
+
+
+
+###########################################################################################################
+################ SUBIDA.PHP ################
+
+<!DOCTYPE HTML>  
+<html>
+<head>
+</head>
+<body>  
+    
+<?php
+session_start();
+
+$message = ''; 
+if (isset($_POST['uploadBtn']) && $_POST['uploadBtn'] == 'Subir')
+{
+  if (isset($_FILES['uploadedFile']) && $_FILES['uploadedFile']['error'] === UPLOAD_ERR_OK)
+  {
+    // get details of the uploaded file
+    $fileTmpPath = $_FILES['uploadedFile']['tmp_name'];
+    $fileName = $_FILES['uploadedFile']['name'];
+    $fileSize = $_FILES['uploadedFile']['size'];
+    $fileType = $_FILES['uploadedFile']['type'];
+    $fileNameCmps = explode(".", $fileName);
+    $fileExtension = strtolower(end($fileNameCmps));
+
+    // sanitize file-name
+    $newFileName = md5(time() . $fileName) . '.' . $fileExtension;
+
+    // check if file has one of the following extensions
+    $allowedfileExtensions = array('jpg', 'gif', 'png', 'zip', 'txt', 'xls', 'doc');
+
+    if (in_array($fileExtension, $allowedfileExtensions))
+    {
+      // directory in which the uploaded file will be moved
+      $uploadFileDir = './uploaded_files/';
+      $dest_path = $uploadFileDir . $newFileName;
+
+      if(move_uploaded_file($fileTmpPath, $dest_path)) 
+      {
+        $message ='Vai ben';
+      }
+      else 
+      {
+        $message = 'Penso que non vai.';
+      }
+    }
+    else
+    {
+      $message = 'O ficheiro non vale: ' . implode(',', $allowedfileExtensions);
+    }
+  }
+  else
+  {
+    $message = 'O ficheiro non vai.<br>';
+    $message .= 'Error:' . $_FILES['uploadedFile']['error'];
+  }
+}
+$_SESSION['message'] = $message;
+header("Location: formulario.php");
+?>
+</body>
+</html>
+
+
+##########################################################################################
+
+
+
+
+
+
