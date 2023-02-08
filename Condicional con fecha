@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+
+$nombre = "Julio";
+$edad = "18";
+
+
+
+if ($edad < "18") {
+  echo "Hoy día " . date("d/m/Y") . ", $nombre no puede votar.";
+} else {
+  echo "Hoy día " . date("d/m/Y") . ", $nombre puede votar.";
+}
+
+
+?>
+
+</body>
+</html>
