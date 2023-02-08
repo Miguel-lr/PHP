@@ -1,0 +1,38 @@
+### AÑADIR UN VALOR FINAL EN EL ARRAY ###
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+$fruta = array("Coco", "Pera", "Melonazo");
+
+array_push($fruta, "Naranja");
+foreach($fruta as $frutas)
+
+echo $frutas." ";
+
+?>
+
+</body>
+</html>
+
+### QUITAR EL PRIMER VALOR EN EL ARRAY ###
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+$fruta = array("Coco", "Pera", "Melonazo");
+
+$quitar = array_shift($fruta);
+
+foreach($fruta as $frutas)
+
+echo $frutas." ";
+
+?>
+
+</body>
+</html>
