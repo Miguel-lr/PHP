@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+$idade = array("Shakira"=>"45", "Piqué"=>"34", "Chía"=>"23");
+
+foreach($idade as $x => $x_value)
+
+arsort($idade);
+   
+foreach($idade as $x=>$x_value)
+   {
+   echo "Nombre:" . $x . ", Edad:" . $x_value;
+   echo "<br>";
+   }
+
+
+?>
+
+</body>
+</html>
