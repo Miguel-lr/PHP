@@ -1,3 +1,9 @@
+Archivos php en "C:\xampp\htdocs\"
+
+Para procesarlos en el navegador, poner en la url "localhost/carpeta o archivo.php
+
+########
+
 <!DOCTYPE html>
 <html>
 <body>
