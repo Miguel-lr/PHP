@@ -1,0 +1,67 @@
+	<html>
+
+<HEAD>
+<title>mult.</title>
+</HEAD>
+
+<body>
+
+<h1>Array Notas</h1>
+  
+  
+     
+<?php
+
+$nota_p1 = 9;
+$nota_p2 = 4;
+$nota_p3 = 6;
+$nota_p4 = 1;
+$sumaNotas=0;
+
+$notas_practicas = array("Práctica1" => "$nota_p1", "Práctica2" => "$nota_p2", "Práctica3" => "$nota_p3", "Práctica4" => "$nota_p4"); 
+
+foreach ($notas_practicas as $Notas){
+$sumaNotas =$sumaNotas+$Notas;
+}
+
+$notaMediaPracticas = $sumaNotas / count($notas_practicas);
+
+echo "A nota media é :" . $notaMediaPracticas;
+
+echo "<br><br>a nota mais alta é: " . max($notas_practicas);
+
+
+echo "<br><br>";
+
+krsort($notas_practicas);
+foreach($notas_practicas as $x => $x_value){
+echo "Práctica=" .$x . ", Nota=" . $x_value;
+
+echo "<br>";
+$sumaNotas= $sumaNotas + $x_value;
+}
+
+  echo "<br><br>";
+  
+unset($notas_practicas['Práctica4']);
+
+$sumaNotas=0;
+
+foreach ($notas_practicas as $Notas){
+$sumaNotas =$sumaNotas+$Notas;
+}
+
+$notaMediaPracticas = $sumaNotas / count($notas_practicas);
+
+echo "A nota media é :" . $notaMediaPracticas;
+
+echo "<br><br>a nota mais alta é: " . max($notas_practicas);
+
+
+?>
+
+
+
+
+</body>
+</html>
